@@ -1,0 +1,27 @@
+div {
+    margin: 10px auto;
+    text-align: center;
+
+    /*
+        border: brown solid 1px;
+        width: 500px;
+    */
+}
+
+input {
+    border: 2px solid lightslategrey;
+    -webkit-transition: box-shadow 0.5s, border 0.5s;
+    -moz-transition: box-shadow 0.5s, border 0.5s;
+    -ms-transition: box-shadow 0.5s, border 0.5s;
+    -o-transition: box-shadow 0.5s, border 0.5s;
+    transition: box-shadow 0.5s, border 0.5s;
+
+}
+
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
