@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Input test</title>
+    <script type="text/javascript" src="http://yandex.st/jquery/1.4.4/jquery.min.js"></script>
+</head>
+<body>
+<div style="margin-top: 20%">
+    <input id=InpFrm1 type=text name=InpFrm autocomplete="off" />
+
+</div>
+<div>
+    <input id=InpFrm2 type=text name=InpFrm autocomplete="off" readonly onkeydown="hilite()"/>
+
+</div>
+
+<script>
+    function hilite(){
+        //disabling transition for the first shadow change animation (see http://stackoverflow.com/a/16575811)
+            $("#InpFrm2").addClass('notransition');
+            $("#InpFrm2").css("box-shadow", "0 0 5px darkred inset");
+            $("#InpFrm2").css("border", "2px solid darkred");
+            $("#InpFrm2")[0].offsetHeight;
+        // re-enabling transition
+        $("#InpFrm2").removeClass('notransition');
+        $("#InpFrm2").css("border", "2px solid lightslategrey")
+        $("#InpFrm2").css("box-shadow", "none");
+    }
+
+    var tmp,input1=$("#InpFrm1");
+    function transfer(){
+        tmp=input1.val();
+        $("#InpFrm2").val(tmp)
+    }
+    input1.bind('mouseout mousemove keydown keypress keyup',function(e){transfer()});
+    //transfer();
+    /*$("#InpFrm1").click(function (){
+     setTimeout('transfer()',100)});*/
+</script>
+</body>
+</html>
