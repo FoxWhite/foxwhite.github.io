@@ -6,6 +6,7 @@ by Jason Costello, @jsncostello
 @import url(pygment_trac.css);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(http://fonts.googleapis.com/css?family=Coming+Soon);
+@import url(http://fonts.googleapis.com/css?family=VT323);
 /*******************************************************************************
 MeyerWeb Reset
 *******************************************************************************/
@@ -52,7 +53,8 @@ body{
   background: #000033;
   color: #fff;
   /*font-family: 'Source Sans Pro', sans-serif;*/
-  font-family: 'Coming Soon', cursive;
+  /*font-family: 'Coming Soon', cursive;*/
+  font-family: 'VT323', monospace;
 }
 .content{
   position: absolute;
@@ -83,6 +85,7 @@ body{
 .message{
   position: absolute;
   font-size: 24px;
+  text-transform: uppercase;
   top: 110px;
   left: 150px;
   width: 183px;
@@ -95,7 +98,7 @@ body{
 
 
 @-webkit-keyframes twitch {
-  0% { -webkit-transform: translateX(4px); }
-  50% { -webkit-transform: translateX(0px); }
-  100% { -webkit-transform: translateX(4px); }
+  0% { -webkit-transform: translateX(0px); }
+  50% { -webkit-transform: translateX(4px); }
+  100% { -webkit-transform: translateX(0px); }
 }
