@@ -2,7 +2,7 @@ body {
   overflow: hidden;
 }
 .bg {
-  background-image: url(bg.jpeg);
+  background-image: url(bg.jpg);
   background-size: cover;
   position: fixed;
   z-index: 0;
