@@ -1,0 +1,57 @@
+body {
+  overflow: hidden;
+}
+.bg {
+  background-image: url(bg.jpeg);
+  background-size: cover;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#cat {
+  position: absolute;
+  top: calc(50% - 180px);
+  right: 100%;
+  animation: move 300s;
+  animation-timing-function: cubic-bezier(0.11, 0.43, 0.25, 1);
+}
+#burger {
+    position: absolute;
+    top: calc( 50% - 250px);
+    left: 100%;  
+    animation: moveL 300s;
+    animation-timing-function: cubic-bezier(0.11, 0.43, 0.25, 1);  
+}
+#burger img {
+  animation: rotate 60s infinite;  
+  animation-timing-function: linear
+}
+
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50vw);
+  }
+}
+@keyframes moveL {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50vw);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
