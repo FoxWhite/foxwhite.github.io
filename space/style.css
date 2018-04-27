@@ -1,15 +1,53 @@
 body {
   overflow: hidden;
 }
+main {
+  display: block;
+}
+main.loading {
+  display: none;
+}
 .bg {
-  background-image: url(bg.jpg);
+  /* background-image: url(bg.jpg); */
   background-size: cover;
   position: fixed;
+  transition: opacity 1s;
   z-index: 0;
+  opacity: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+#loader {
+  display: none;
+}
+
+#loader.active {
+  display: block;
+  position: absolute;
+  animation: bounce .4s infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+  text-align: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+}
+#loader span {
+  font-family: sans-serif;
+  position: absolute;
+  top: 10px;
+  left: 55%;
+  opacity: 0;
+  transform: rotate(57deg);
+  animation: fadeIn .3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 #cat {
   position: absolute;
@@ -21,12 +59,12 @@ body {
 #burger {
     position: absolute;
     top: calc( 50% - 250px);
-    left: 100%;  
+    left: 100%;
     animation: moveL 300s;
-    animation-timing-function: cubic-bezier(0.11, 0.43, 0.25, 1);  
+    animation-timing-function: cubic-bezier(0.11, 0.43, 0.25, 1);
 }
 #burger img {
-  animation: rotate 60s infinite;  
+  animation: rotate 60s infinite;
   animation-timing-function: linear
 }
 
@@ -54,4 +92,14 @@ body {
   to {
     transform: rotate(-360deg);
   }
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 10px, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
