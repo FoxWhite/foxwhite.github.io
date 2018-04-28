@@ -57,7 +57,7 @@ main.loading {
   animation-timing-function: cubic-bezier(0.11, 0.43, 0.25, 1);
 }
 #lashook img {
-  width: 300px;
+  width: 400px;
 }
 #shav {
     position: absolute;
@@ -69,7 +69,7 @@ main.loading {
 #shav img {
   animation: rotate 60s infinite;
   animation-timing-function: linear;
-  width: 200px;
+  width: 300px;
 }
 
 
