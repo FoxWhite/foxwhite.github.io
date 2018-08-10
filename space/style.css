@@ -20,6 +20,7 @@ main.loading {
   bottom: 0;
 }
 #loader {
+  user-select: none;
   display: none;
   transition: transform .3s;
   transform: rotate(0);

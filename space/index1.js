@@ -1,5 +1,6 @@
 const loader = document.getElementById('loader')
 const bg = document.getElementById('bg')
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
 
 const loading = (() => {
@@ -37,11 +38,17 @@ const image = new Image()
 image.src="./bg.jpg"
 
 image.onload = () => {
-  console.info('img loaded..')
   loading.setImageLoaded()
   checkLoading()
 }
+
 const music = new Audio('./sonata.mp3')
+
+if (isMobile) {
+  loading.setMusicLoaded()
+  checkLoading()
+}
+
 music.oncanplay = () => {
   console.info('music loaded..')
   loading.setMusicLoaded()
