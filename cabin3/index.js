@@ -1,4 +1,3 @@
-const music = document.getElementById('music')
 const loader = document.getElementById('loader')
 const bg = document.getElementById('bg')
 
@@ -42,7 +41,7 @@ image.onload = () => {
   loading.setImageLoaded()
   checkLoading()
 }
-
+const music = new Audio('./sonata.mp3')
 music.oncanplay = () => {
   console.info('music loaded..')
   loading.setMusicLoaded()
