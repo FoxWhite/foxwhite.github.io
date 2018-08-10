@@ -34,7 +34,9 @@ image.onload = () => {
   checkLoading()
 }
 
-music.addEventListener('canplaythrough', () => {
+const audio = document.getElementById('music')
+audio.addEventListener('canplay', () => {
+  console.info('audio loaded')
   loading.setMusicLoaded()
   checkLoading()
 })
