@@ -1,4 +1,3 @@
-
 const music = document.getElementById('music')
 const loader = document.getElementById('loader')
 const bg = document.getElementById('bg')
@@ -17,7 +16,7 @@ const loading = (() => {
 const checkLoading = () => {
   if (loading.isLoaded()) {
     loader.classList.remove('animated')
-    setTimeout(() => loader.classList.add('play'), 200)
+    setTimeout(() => loader.classList.add('play'), 10)
   }
 }
 
@@ -39,11 +38,13 @@ const image = new Image()
 image.src="./bg.jpg"
 
 image.onload = () => {
+  console.info('img loaded..')
   loading.setImageLoaded()
   checkLoading()
 }
 
 music.oncanplay = () => {
+  console.info('music loaded..')
   loading.setMusicLoaded()
   checkLoading()
 }
