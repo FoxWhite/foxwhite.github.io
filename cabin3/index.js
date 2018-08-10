@@ -1,10 +1,7 @@
-const image = new Image()
-image.src="./bg.jpg"
-setTimeout(() => {
-  if (!image.complete) {
-    document.getElementById('loader').classList.add('active')
-  }
-}, 500)
+
+const music = document.getElementById('music')
+const loader = document.getElementById('loader')
+const bg = document.getElementById('bg')
 
 
 const loading = (() => {
@@ -19,24 +16,34 @@ const loading = (() => {
 
 const checkLoading = () => {
   if (loading.isLoaded()) {
-    document.getElementById('loader').classList.remove('active')
-    document.getElementById('music').play()
-    document.getElementById('bg').style['background-image'] = `url(${image.src})`
-    setTimeout(() => {
-      document.getElementById('bg').style['opacity'] = '1'
-    }, 4)
-    document.getElementsByTagName('main')[0].classList.remove('loading')
+    loader.classList.remove('animated')
+    setTimeout(() => loader.classList.add('play'), 200)
   }
 }
+
+loader.onclick = (e) => {
+  if (!loading.isLoaded()) {
+    return
+  }
+  e.target.classList.remove('active')
+  music.play()
+  bg.style['background-image'] = `url(${image.src})`
+  setTimeout(() => {
+    bg.style['opacity'] = '1'
+  }, 4)
+  document.getElementsByTagName('main')[0].classList.remove('loading')
+}
+
+
+const image = new Image()
+image.src="./bg.jpg"
 
 image.onload = () => {
   loading.setImageLoaded()
   checkLoading()
 }
 
-const audio = document.getElementById('music')
-audio.addEventListener('canplay', () => {
-  console.info('audio loaded')
+music.oncanplay = () => {
   loading.setMusicLoaded()
   checkLoading()
-})
+}
